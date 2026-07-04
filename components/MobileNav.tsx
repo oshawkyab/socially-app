@@ -14,11 +14,13 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import { LogIn, LogOut, TextAlignJustify } from 'lucide-react'
 import { Bell, HomeIcon, UserRound } from 'lucide-react'
-import { SignInButton, SignOutButton, useAuth } from '@clerk/nextjs'
+import { SignInButton, SignOutButton, useAuth, useUser } from '@clerk/nextjs'
 
 const MobileNav = () => {
    const [isOpen, setIsOpen] = useState(false)
    const { isSignedIn } = useAuth()
+   const {user} = useUser()
+  
 
    return (
       <div className='lg:hidden'>
@@ -62,7 +64,7 @@ const MobileNav = () => {
                         </Button>
 
                         <Button onClick={() => setIsOpen(false)} variant={"ghost"} asChild>
-                           <Link className='flex justify-start items-center gap-4' href={"/profile"}>
+                           <Link className='flex justify-start items-center gap-4' href={`/profile/${user?.primaryEmailAddress?.emailAddress.split("@")[0]}`}>
                               <UserRound className='w-4 h-4' />
                               Profile
                            </Link>
