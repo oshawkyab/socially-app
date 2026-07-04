@@ -79,9 +79,9 @@ const ProfilePageClient = ({ user, userId, posts, likedPosts, isOwnProfile, init
    }
 
    return (
-      <div className="w-full ">
+      <div className="w-full overflow-hidden flex flex-col items-center justify-center">
          {/* info card */}
-         <Card className="w-full p-3 mx-auto rounded-sm  shadow flex flex-col space-y-2">
+         <Card className="max-w-11/12 p-3 mx-auto rounded-sm  shadow flex flex-col space-y-2">
             <Avatar className="w-24 h-24 rounded-full mx-auto">
                <AvatarImage className="w-full h-full" src={user.image ?? "/avatar.png"} />
             </Avatar>
