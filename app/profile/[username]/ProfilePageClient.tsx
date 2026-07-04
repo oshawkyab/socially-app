@@ -79,35 +79,35 @@ const ProfilePageClient = ({ user, userId, posts, likedPosts, isOwnProfile, init
    }
 
    return (
-      <div className="w-full">
+      <div className="w-full ">
          {/* info card */}
-         <Card className="w-xl p-3 mx-auto rounded-sm  shadow flex flex-col space-y-2">
+         <Card className="w-full p-3 mx-auto rounded-sm  shadow flex flex-col space-y-2">
             <Avatar className="w-24 h-24 rounded-full mx-auto">
                <AvatarImage className="w-full h-full" src={user.image ?? "/avatar.png"} />
             </Avatar>
 
             {/* username, bio, location, web and email */}
             <div>
-               <h2 className="text-xl font-bold text-center">{user.username}</h2>
-               <h3 className="text-lg text-center text-muted-foreground">{user.email}</h3>
-               <div className="flex space-x-7 justify-around items-center my-4 w-full">
+               <h2 className="md:text-xl font-bold text-center">{user.username}</h2>
+               <h3 className="md:text-xl text-center text-muted-foreground">{user.email}</h3>
+               <div className="flex md:space-x-7 flex-col md:flex-row justify-around items-center my-4 w-full">
                   <p className="flex space-x-2 text-xs capitalize text-gray-500"><SquarePen className="w-4 h-4 mr-2 shrink-0" /> {(user.bio) ?? "not exisiting bio"}</p>
                   <p className="flex space-x-2 text-xs capitalize text-gray-500"><LinkIcon className="w-4 h-4 mr-2 shrink-0" />{user.website ?? "not existing website"}</p>
                   <p className="flex space-x-2 text-xs capitalize text-gray-500"><MapPinned className="w-4 h-4 mr-2 shrink-0" />{user.location ?? "not existing location"}</p>
                </div>
 
-               <div className="flex items-center justify-around space-x-10">
-                  <div className="flex flex-col items-center justify-center">
-                     <p className="font-bold">{user._count.followers}</p>
-                     <h2 className="font-semibold text-gray-400">Followers</h2>
+               <div className="flex flex-col md:flex-row items-center md:justify-around justify-center sm:space-y-2 md:space-x-10">
+                  <div className="flex  flex-col items-center justify-center">
+                     <p className="font-bold text-xs md:text-sm">{user._count.followers}</p>
+                     <h2 className="text-xs md:text-sm font-semibold text-gray-400">Followers</h2>
                   </div>
                   <div className="flex flex-col items-center justify-center">
-                     <p className="font-bold">{user._count.following}</p>
-                     <h2 className="font-semibold text-gray-400">Following</h2>
+                     <p className="font-bold text-xs md:text-sm">{user._count.following}</p>
+                     <h2 className="text-xs md:text-sm font-semibold text-gray-400">Following</h2>
                   </div>
                   <div className="flex flex-col items-center justify-center">
-                     <p className="font-bold">{user._count.posts}</p>
-                     <h2 className="font-semibold text-gray-400">Posts</h2>
+                     <p className="font-bold text-xs md:text-sm">{user._count.posts}</p>
+                     <h2 className="text-xs md:text-sm font-semibold text-gray-400">Posts</h2>
                   </div>
                </div>
             </div>
